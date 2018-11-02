@@ -12,6 +12,10 @@ class Triangle
   end
 
   def kind
+    error_one = 
+    error_two = 
+    error_three =
+    
     if @shape.include?(/\-[0-9]*/) || @shape.include?(0)
       raise TriangleError      
     elsif @shape.uniq.length == 1
