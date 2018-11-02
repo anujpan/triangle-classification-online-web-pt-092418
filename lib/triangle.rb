@@ -15,9 +15,9 @@ class Triangle
   end
 
   def kind
-    error_one = @side_one <= 0 || @side_two <= 0 || @side_three <= 0
-    error_two = nil
-    error_three = nil
+    error_one = @a == 0 || @b == 0 || @c == 0  
+    error_two = @a + @b <= @c || @b + @c <= @a || @a + @c <= @b 
+    error_three = @a.negative? || @b.negative? || @c.negative?
     
     if error_one || error_two || error_three
       raise TriangleError      
