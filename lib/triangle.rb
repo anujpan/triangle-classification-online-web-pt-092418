@@ -4,9 +4,9 @@ class Triangle
   attr_accessor :side_one, :side_two, :side_three
 
   def initialize(side_one, side_two, side_three)
-    @side_one = side_one
-    @side_two = side_two
-    @side_three = side_three
+    @a = side_one
+    @b = side_two
+    @c = side_three
     @shape = [side_one, side_two, side_three]
   end
 
@@ -15,11 +15,10 @@ class Triangle
   end
 
   def kind
-    error_one = @a == 0 || @b == 0 || @c == 0  
+    error_one = @a <= 0 || @b <= 0 || @c <= 0  
     error_two = @a + @b <= @c || @b + @c <= @a || @a + @c <= @b 
-    error_three = @a.negative? || @b.negative? || @c.negative?
-    
-    if error_one || error_two || error_three
+
+    if error_one || error_two
       raise TriangleError      
     elsif @shape.uniq.length == 1
       :equilateral
