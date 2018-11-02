@@ -15,9 +15,9 @@ class Triangle
   end
 
   def kind
-    error_one = 
-    error_two = 
-    error_three = 
+    # error_one = 
+    # error_two = 
+    # error_three = 
     
     if error_one || error_two || error_three
       raise TriangleError      
